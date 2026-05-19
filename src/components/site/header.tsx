@@ -61,11 +61,11 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* Top stripe — phone & email, visible on all screens */}
+      {/* Top stripe — social, phone & email */}
       <div className="bg-navy text-white text-xs">
-        <div className="container mx-auto max-w-7xl px-4 h-9 flex items-center justify-center gap-4 sm:justify-between">
+        <div className="container mx-auto max-w-7xl px-4 py-1.5 sm:py-0 sm:h-9 flex items-center justify-between gap-2">
           {/* Social icons — left side */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-shrink-0">
             {socials.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                 className="size-6 grid place-items-center rounded-full bg-white/10 hover:bg-solar hover:text-navy transition-colors">
@@ -74,14 +74,15 @@ export function Header() {
             ))}
           </div>
           {/* Contact info — right side */}
-          <div className="flex items-center gap-4">
-            <a href="tel:5109800723" className="flex items-center gap-1.5 hover:text-solar transition-colors">
+          <div className="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-4">
+            <a href="tel:5109800723" className="flex items-center gap-1.5 hover:text-solar transition-colors whitespace-nowrap">
               <Phone className="size-3.5 flex-shrink-0" />
               <span>(510) 980-0723</span>
             </a>
             <a href="mailto:info@solarcareelectric.com" className="flex items-center gap-1.5 hover:text-solar transition-colors">
               <Mail className="size-3.5 flex-shrink-0" />
-              <span>info@solarcareelectric.com</span>
+              <span className="hidden sm:inline">info@solarcareelectric.com</span>
+              <span className="sm:hidden">Email Us</span>
             </a>
           </div>
         </div>
