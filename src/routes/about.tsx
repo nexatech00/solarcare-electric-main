@@ -28,12 +28,12 @@ const teamMembers = [
   {
     name: "Edgar Vega", role: "CEO",
     bio: "Visionary leader driving SolarCare Electric's mission to make clean, affordable solar energy accessible to every American home and business.",
-    stats: "10,000+ installs led",
+    stats: "1,000+ solar installs",
   },
   {
     name: "Diana Vega", role: "Co-CEO",
     bio: "Co-leads SolarCare Electric with a focus on customer experience, operations, and building lasting relationships with every client we serve.",
-    stats: "25+ years experience",
+    stats: "5 years experience",
   },
 ];
 
