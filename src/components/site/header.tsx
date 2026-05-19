@@ -63,7 +63,7 @@ export function Header() {
     <header className="sticky top-0 z-50">
       {/* Top stripe — social, phone & email */}
       <div className="bg-navy text-white text-xs">
-        <div className="container mx-auto max-w-7xl px-4 py-1.5 sm:py-0 sm:h-9 flex items-center justify-between gap-2">
+        <div className="container mx-auto max-w-7xl px-4 h-9 flex items-center justify-between gap-2">
           {/* Social icons — left side */}
           <div className="flex items-center gap-2 flex-shrink-0">
             {socials.map((s) => (
@@ -74,15 +74,15 @@ export function Header() {
             ))}
           </div>
           {/* Contact info — right side */}
-          <div className="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-4">
+          <div className="flex items-center gap-3 flex-shrink-0">
+            {/* Mobile: icon + number, Desktop: full */}
             <a href="tel:5109800723" className="flex items-center gap-1.5 hover:text-solar transition-colors whitespace-nowrap">
               <Phone className="size-3.5 flex-shrink-0" />
-              <span>(510) 980-0723</span>
+              <span className="hidden sm:inline">(510) 980-0723</span>
             </a>
-            <a href="mailto:info@solarcareelectric.com" className="flex items-center gap-1.5 hover:text-solar transition-colors">
+            <a href="mailto:info@solarcareelectric.com" className="flex items-center gap-1.5 hover:text-solar transition-colors whitespace-nowrap">
               <Mail className="size-3.5 flex-shrink-0" />
               <span className="hidden sm:inline">info@solarcareelectric.com</span>
-              <span className="sm:hidden">Email Us</span>
             </a>
           </div>
         </div>
