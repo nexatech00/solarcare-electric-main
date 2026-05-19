@@ -31,7 +31,6 @@ function ContactPage() {
     const bill      = fd.get("bill") as string;
     const roof      = fd.get("roof") as string;
     const shade     = fd.get("shade") as string;
-    const contact   = fd.get("contact") as string;
     const message   = fd.get("message") as string;
     const checked   = services.filter((s) => fd.getAll("services").includes(s));
 
@@ -46,7 +45,6 @@ function ContactPage() {
       `💡 *Monthly Bill:* ${bill}`,
       `🏗️ *Roof Type:* ${roof}`,
       `☀️ *Shade:* ${shade}`,
-      `📬 *Preferred Contact:* ${contact}`,
       `🔧 *Services:* ${checked.length ? checked.join(", ") : "None selected"}`,
       `💬 *Message:* ${message || "—"}`,
     ].join("\n");
@@ -147,17 +145,6 @@ function ContactPage() {
                   </div>
                 </div>
 
-                {/* Preferred contact */}
-                <div className="col-span-full">
-                  <label className="text-sm font-semibold text-card-foreground">Preferred Contact Method</label>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {["Email","Phone","SMS"].map((c) => (
-                      <label key={c} className="flex items-center gap-2 text-sm text-card-foreground px-4 py-2 rounded-full border border-border hover:bg-muted cursor-pointer">
-                        <input type="radio" name="contact" value={c} className="accent-solar" /> {c}
-                      </label>
-                    ))}
-                  </div>
-                </div>
 
                 {/* Message */}
                 <div className="col-span-full">
