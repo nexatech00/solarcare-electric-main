@@ -122,7 +122,7 @@ function ContactPage() {
               <ul className="mt-4 space-y-3 text-sm">
                 {[
                   { icon: Phone, text: "(510) 980-0723" },
-                  { icon: Mail, text: "info.solarnelectric@gmail.com" },
+                  { icon: Mail, text: "info@solarcare-electric.com" },
                   { icon: MapPin, text: "Austin, TX (HQ) · Nationwide" },
                   { icon: Clock, text: "Mon-Fri 8am-6pm · Sat 9am-2pm" },
                 ].map(({ icon: Icon, text }, i) => (

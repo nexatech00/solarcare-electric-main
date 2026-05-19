@@ -80,7 +80,7 @@ export function Footer() {
           <h4 className="text-white font-display font-semibold mb-4">Get In Touch</h4>
           <ul className="space-y-3 text-sm text-slate-400">
             <li className="flex gap-2"><Phone className="size-4 text-solar flex-shrink-0" /> (510) 980-0723</li>
-            <li className="flex gap-2"><Mail className="size-4 text-solar flex-shrink-0" /> info.solarnelectric@gmail.com</li>
+            <li className="flex gap-2"><Mail className="size-4 text-solar flex-shrink-0" /> info@solarcare-electric.com</li>
             <li className="flex gap-2 items-center">
               <span className="size-4 flex-shrink-0 text-solar font-bold text-xs grid place-items-center">✓</span>
               CSLB #115592

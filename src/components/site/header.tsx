@@ -80,9 +80,9 @@ export function Header() {
               <Phone className="size-3.5 flex-shrink-0" />
               <span className="hidden sm:inline">(510) 980-0723</span>
             </a>
-            <a href="mailto:info@solarcareelectric.com" className="flex items-center gap-1.5 hover:text-solar transition-colors whitespace-nowrap">
+            <a href="mailto:info@solarcare-electric.com" className="flex items-center gap-1.5 hover:text-solar transition-colors whitespace-nowrap">
               <Mail className="size-3.5 flex-shrink-0" />
-              <span className="hidden sm:inline">info@solarcareelectric.com</span>
+              <span className="hidden sm:inline">info@solarcare-electric.com</span>
             </a>
           </div>
         </div>
