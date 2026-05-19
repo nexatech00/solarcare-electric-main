@@ -1,0 +1,147 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --font-accent: 'Montserrat', system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-solar: var(--solar);
+  --color-solar-foreground: var(--solar-foreground);
+  --color-navy: var(--navy);
+  --color-eco: var(--eco);
+  --color-trust: var(--trust);
+  --color-warm: var(--warm);
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Brand: Solar yellow #ecc343, Navy #234791, Eco green #10B981, Trust blue #234791, Warm yellow #ecc343 */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.33 0.12 260);
+  --card: oklch(0.33 0.12 260);           /* navy blue #234791 */
+  --card-foreground: oklch(0.82 0.17 85); /* yellow #ecc343 */
+  --popover: oklch(0.33 0.12 260);        /* blue, matches card */
+  --popover-foreground: oklch(0.82 0.17 85);
+  --primary: oklch(0.33 0.12 260); /* navy #234791 */
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.94 0.02 260);
+  --secondary-foreground: oklch(0.33 0.12 260);
+  --muted: oklch(0.94 0.02 260);
+  --muted-foreground: oklch(0.5 0.06 260);
+  --accent: oklch(0.82 0.17 85); /* solar yellow accent #ecc343 */
+  --accent-foreground: oklch(0.33 0.12 260);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.90 0.02 260);
+  --input: oklch(0.90 0.02 260);
+  --ring: oklch(0.82 0.17 85);
+  --solar: oklch(0.82 0.17 85);          /* #ecc343 */
+  --solar-foreground: oklch(0.33 0.12 260);
+  --navy: oklch(0.33 0.12 260);          /* #234791 */
+  --eco: oklch(0.7 0.15 165);            /* #10B981 */
+  --trust: oklch(0.33 0.12 260);         /* #234791 */
+  --warm: oklch(0.82 0.17 85);           /* #ecc343 */
+}
+
+.dark {
+  --background: oklch(0.22 0.08 260);    /* dark #234791 shade */
+  --foreground: oklch(0.95 0.01 260);
+  --card: oklch(0.33 0.12 260);
+  --card-foreground: oklch(0.95 0.01 260);
+  --popover: oklch(0.33 0.12 260);
+  --popover-foreground: oklch(0.95 0.01 260);
+  --primary: oklch(0.82 0.17 85);
+  --primary-foreground: oklch(0.22 0.08 260);
+  --secondary: oklch(0.38 0.10 260);
+  --secondary-foreground: oklch(0.95 0.01 260);
+  --muted: oklch(0.38 0.10 260);
+  --muted-foreground: oklch(0.7 0.05 260);
+  --accent: oklch(0.82 0.17 85);
+  --accent-foreground: oklch(0.22 0.08 260);
+  --destructive: oklch(0.7 0.19 22);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.40 0.08 260);
+  --input: oklch(0.40 0.08 260);
+  --ring: oklch(0.82 0.17 85);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; }
+}
+
+/* Light mode only: all text inside blue cards becomes yellow */
+:root:not(.dark) .bg-card {
+  --foreground: oklch(0.82 0.17 85);
+  --card-foreground: oklch(0.82 0.17 85);
+  --muted-foreground: oklch(0.90 0.12 85);
+  color: oklch(0.82 0.17 85);
+}
+
+/* Light mode: form inputs/textareas/selects always have dark text on white bg,
+   even when nested inside a blue card */
+:root:not(.dark) input,
+:root:not(.dark) textarea,
+:root:not(.dark) select {
+  color: oklch(0.33 0.12 260) !important;        /* navy text */
+  background-color: oklch(1 0 0) !important;     /* white bg */
+}
+:root:not(.dark) input::placeholder,
+:root:not(.dark) textarea::placeholder {
+  color: oklch(0.55 0.06 260) !important;        /* muted placeholder */
+}
+
+/* Dark mode: inputs use dark background with light text */
+.dark input,
+.dark textarea,
+.dark select {
+  color: oklch(0.95 0.01 260) !important;
+  background-color: oklch(0.28 0.09 260) !important;
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: oklch(0.60 0.05 260) !important;
+}
+
+@layer utilities {
+  .gradient-solar { background: linear-gradient(135deg, #ecc343 0%, #ecc343 100%); }
+  .gradient-navy { background: linear-gradient(135deg, #1a3570 0%, #234791 100%); }
+  .gradient-hero { background: linear-gradient(135deg, rgba(26,53,112,0.85) 0%, rgba(35,71,145,0.7) 100%); }
+  .text-gradient-solar { background: linear-gradient(135deg, #ecc343, #ecc343); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .shadow-solar { box-shadow: 0 10px 40px -10px rgba(236,195,67,0.4); }
+  .shadow-glow { box-shadow: 0 0 60px -10px rgba(236,195,67,0.5); }
+}
